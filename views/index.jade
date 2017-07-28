@@ -1,0 +1,25 @@
+
+
+extends layout
+
+block content
+  table.table
+    tr
+      th Name
+      th Address
+      th Phone
+      th Email
+      th Create Date
+      th Action
+    for student in students
+      tr
+        td #{student.name}
+        td #{student.address}
+        td #{student.phone}
+        td #{student.email}
+        td #{student.create_date}
+        td
+            a(href="//#{student._id}")
+                span.glyphicon.glyphicon-remove
+            a(href="/edit/#{student._id}")
+                span.glyphicon.glyphicon-edit
